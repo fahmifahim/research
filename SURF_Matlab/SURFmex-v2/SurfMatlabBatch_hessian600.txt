@@ -1,0 +1,351 @@
+% #########					#########				
+% #########	ConditionA vs ConditionA	#########
+% #########					######### 
+
+
+%Reference image 39 vs 1-62
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm';
+for i=1:62,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 85 vs 63-120
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0085.pgm';
+for i=63:120,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 155 vs 121-190
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0155.pgm';
+for i=121:190,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 225 vs 191-243
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0225.pgm';
+for i=191:243,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 261 vs 244-300
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0261.pgm';
+for i=244:300,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 340 vs 301-375
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0340.pgm';
+for i=301:375,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 410 vs 376-435
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0410.pgm';
+for i=376:435,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 460 vs 436-490
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0460.pgm';
+for i=436:490,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 520 vs 491-550
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0520.pgm';
+for i=491:550,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 580 vs 551-610
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0580.pgm';
+for i=551:610,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 640 vs 611-670
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0640.pgm';
+for i=611:670,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+%Reference image 700 vs 671-739
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0700.pgm';
+for i=671:739,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/A_A_hessian600_');
+	
+end	
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionD	#########
+% #########					######### 
+
+%Reference image 39 vs 1-62
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm';
+for i=1:62,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 85 vs 63-120
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0085.pgm';
+for i=63:120,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 155 vs 121-190
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0155.pgm';
+for i=121:190,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 225 vs 191-243
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0225.pgm';
+for i=191:243,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 261 vs 244-300
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0261.pgm';
+for i=244:300,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 340 vs 301-375
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0340.pgm';
+for i=301:375,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 410 vs 376-435
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0410.pgm';
+for i=376:435,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 460 vs 436-490
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0460.pgm';
+for i=436:490,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 520 vs 491-550
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0520.pgm';
+for i=491:550,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 580 vs 551-610
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0580.pgm';
+for i=551:610,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 640 vs 611-670
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0640.pgm';
+for i=611:670,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+%Reference image 700 vs 671-720
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0700.pgm';
+for i=671:720,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_hessian600_');
+	
+end	
+
+
+
+
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionH	#########
+% #########					######### 
+
+%Reference image 39 vs 1-80
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm';
+for i=1:80,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 85 vs 81-138
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0085.pgm';
+for i=81:138,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 155 vs 139-208
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0155.pgm';
+for i=139:208,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 225 vs 209-261
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0225.pgm';
+for i=209:261,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 261 vs 262-318
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0261.pgm';
+for i=262:318,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 340 vs 319-393
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0340.pgm';
+for i=319:393,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 410 vs 394-453
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0410.pgm';
+for i=394:453,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 460 vs 454-508
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0460.pgm';
+for i=454:508,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 520 vs 509-568
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0520.pgm';
+for i=509:568,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 580 vs 569-628
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0580.pgm';
+for i=569:628,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 640 vs 629-688
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0640.pgm';
+for i=629:688,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end	
+
+%Reference image 700 vs 689-783
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0700.pgm';
+for i=689:783,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test(reference_img, file_img2, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_hessian600_');
+	
+end
+
+
+
+
+
+
+
+
+
+
+left_img  = imread('C:/atad/research/experiment/SURF/data/conditionA/conditionA_0039.pgm');
+right_img = imread('C:/atad/research/experiment/SURF/data/conditionA/conditionA_0001.pgm');
+ 
+%SURF-64
+%[spixels_l,descr_l,sign_l,info_l] = surfpoints(left_img); 
+%SURF OpenCV 1.1pre
+%[spixels_l,descr_l,sign_l,info_l] = surfpoints(left_img);
+
+%SURF-128
+[spixels_l,descr_l,sign_l,info_l] = surfpoints(left_img, surfoptions); 
+
+fprintf('Reference image features: ');
+size(spixels_l, 2)
+
+%SURF-64
+%[spixels_r,descr_r,sign_r,info_r] = surfpoints(right_img);
+%SURF OpenCV 1.1pre
+%[spixels_r,descr_r,sign_r,info_r] = surfpoints(left_img);
+
+%SURF-128
+[spixels_r,descr_r,sign_r,info_r] = surfpoints(right_img, surfoptions);
+
+
+fprintf('Input image features: ');
+size(spixels_r, 2)
+
+%SIFT matching method UBCmatch
+[matches_o11, scores_o11] = vl_ubcmatch(descr_l,descr_r) ;
+

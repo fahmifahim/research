@@ -1,0 +1,27 @@
+% SURF KEYPOINT EXTRACTION TIME 
+
+% Condition A
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm';
+for i=1:739,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	match_test_extractionTime(reference_img, file_img2, 'C:/atad/research/experiment/SURF/result/conditionA_conditionA/SURFextractionTime_A_A.txt');
+end
+
+
+% Condition D
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm';
+for i=1:720,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	match_test_extractionTime(reference_img, file_img2, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/SURFextractionTime_A_D.txt');
+end
+
+
+% Condition H
+reference_img = 'C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm';
+for i=1:783,
+	file_img2 = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	match_test_extractionTime(reference_img, file_img2, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/SURFextractionTime_A_H.txt');
+end
+
+
+

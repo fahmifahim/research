@@ -1,0 +1,44 @@
+OCVRoot = 'C:/opencv243';
+IPath = ['-I',fullfile(OCVRoot,'build/include')];
+LPath = fullfile(OCVRoot, 'build/x86/vc9/lib');
+lib1 = fullfile(LPath,'opencv_core243d.lib');
+lib2 = fullfile(LPath,'opencv_imgproc243d.lib');
+lib3 = fullfile(LPath,'opencv_highgui243d.lib');
+lib4 = fullfile(LPath, 'opencv_ml243d.lib');
+lib5 = fullfile(LPath, 'opencv_video243d.lib');
+lib6 = fullfile(LPath, 'opencv_features2d243d.lib');
+lib7 = fullfile(LPath, 'opencv_calib3d243d.lib');
+lib8 = fullfile(LPath, 'opencv_objdetect243d.lib');
+lib9 = fullfile(LPath, 'opencv_contrib243d.lib');
+lib10 = fullfile(LPath, 'opencv_legacy243d.lib');
+lib11 = fullfile(LPath, 'opencv_flann243d.lib');
+lib12 = fullfile(LPath, 'opencv_nonfree243d.lib');
+
+
+mex('surfpoints.cpp', IPath, lib1, lib2, lib3, lib4, lib5, lib6, lib7, lib8, lib9, lib10, lib11, lib12);
+
+rem OpenCV library
+rem set ocvdir=C:/opencv243
+rem set include=C:/opencv243/build/include C:/opencv243/build/include/opencv
+set lib=C:/opencv243/build/x86/vc9/lib 
+set linkflags=opencv_core243d.lib opencv_imgproc243d.lib opencv_highgui243d.lib opencv_ml243d.lib opencv_video243d.lib opencv_features2d243d.lib opencv_calib3d243d.lib opencv_objdetect243d.lib opencv_contrib243d.lib opencv_legacy243d.lib opencv_flann243d.lib 
+
+
+
+OCVRoot = 'C:/OpenCV2.1';
+IPath = ['-I',fullfile(OCVRoot,'include')];
+LPath = fullfile(OCVRoot, 'lib');
+lib1 = fullfile(LPath,'cv210.lib');
+lib2 = fullfile(LPath,'cxcore210.lib');
+lib3 = fullfile(LPath,'highgui210.lib');
+lib4 = fullfile(LPath, 'cxcore210.lib');
+
+mex('surfpoints.cpp', IPath, lib1, lib2, lib3, lib4);
+
+
+
+
+
+
+
+
