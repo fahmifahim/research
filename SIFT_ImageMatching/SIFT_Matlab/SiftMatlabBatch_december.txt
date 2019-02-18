@@ -1,0 +1,868 @@
+% ### ConditionA vs ConditionA ###
+% keypoints
+%for i=1:739
+%	imgPath = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+%	sift(imgPath);
+%end
+
+
+%Reference image 39 vs 1-62
+reference_img = '../data/reference/A/conditionA_0039.pgm';
+for i=1:62,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 85 vs 63-120
+reference_img = '../data/reference/A/conditionA_0085.pgm';
+for i=63:120,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 155 vs 121-190
+reference_img = '../data/reference/A/conditionA_0155.pgm';
+for i=121:190,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 225 vs 191-243
+reference_img = '../data/reference/A/conditionA_0225.pgm';
+for i=191:243,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 261 vs 244-300
+reference_img = '../data/reference/A/conditionA_0261.pgm';
+for i=244:300,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 340 vs 301-375
+reference_img = '../data/reference/A/conditionA_0340.pgm';
+for i=301:375,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 410 vs 376-435
+reference_img = '../data/reference/A/conditionA_0410.pgm';
+for i=376:435,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 460 vs 436-490
+reference_img = '../data/reference/A/conditionA_0460.pgm';
+for i=436:490,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 520 vs 491-550
+reference_img = '../data/reference/A/conditionA_0520.pgm';
+for i=491:550,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 580 vs 551-610
+reference_img = '../data/reference/A/conditionA_0580.pgm';
+for i=551:610,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 640 vs 611-670
+reference_img = '../data/reference/A/conditionA_0640.pgm';
+for i=611:670,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+%Reference image 700 vs 671-739
+reference_img = '../data/reference/A/conditionA_0700.pgm';
+for i=671:739,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionA/A_A_');
+	
+end	
+
+
+
+
+
+
+% ### ConditionA vs ConditionD ###
+% keypoints D
+%for i=1:720
+%	imgPath = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+%	sift(imgPath);
+%end
+
+%Reference image 39 vs 1-62
+reference_img = '../data/reference/A/conditionA_0039.pgm';
+for i=1:62,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 85 vs 63-120
+reference_img = '../data/reference/A/conditionA_0085.pgm';
+for i=63:120,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 155 vs 121-190
+reference_img = '../data/reference/A/conditionA_0155.pgm';
+for i=121:190,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 225 vs 191-243
+reference_img = '../data/reference/A/conditionA_0225.pgm';
+for i=191:243,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 261 vs 244-300
+reference_img = '../data/reference/A/conditionA_0261.pgm';
+for i=244:300,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 340 vs 301-375
+reference_img = '../data/reference/A/conditionA_0340.pgm';
+for i=301:375,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 410 vs 376-435
+reference_img = '../data/reference/A/conditionA_0410.pgm';
+for i=376:435,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 460 vs 436-490
+reference_img = '../data/reference/A/conditionA_0460.pgm';
+for i=436:490,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 520 vs 491-550
+reference_img = '../data/reference/A/conditionA_0520.pgm';
+for i=491:550,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 580 vs 551-610
+reference_img = '../data/reference/A/conditionA_0580.pgm';
+for i=551:610,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 640 vs 611-670
+reference_img = '../data/reference/A/conditionA_0640.pgm';
+for i=611:670,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 700 vs 671-720
+reference_img = '../data/reference/A/conditionA_0700.pgm';
+for i=671:720,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionD/A_D_');
+	
+end	
+
+
+
+
+
+
+
+
+% ### ConditionA vs ConditionH ###
+% keypoints H
+%for i=1:783
+%	imgPath = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+%	sift(imgPath);
+%end
+
+
+%Reference image 39 vs 1-80
+reference_img = '../data/reference/A/conditionA_0039.pgm';
+for i=1:80,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 85 vs 81-138
+reference_img = '../data/reference/A/conditionA_0085.pgm';
+for i=81:138,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 155 vs 139-208
+reference_img = '../data/reference/A/conditionA_0155.pgm';
+for i=139:208,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 225 vs 209-261
+reference_img = '../data/reference/A/conditionA_0225.pgm';
+for i=209:261,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 261 vs 262-318
+reference_img = '../data/reference/A/conditionA_0261.pgm';
+for i=262:318,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 340 vs 319-393
+reference_img = '../data/reference/A/conditionA_0340.pgm';
+for i=319:393,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 410 vs 394-453
+reference_img = '../data/reference/A/conditionA_0410.pgm';
+for i=394:453,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 460 vs 454-508
+reference_img = '../data/reference/A/conditionA_0460.pgm';
+for i=454:508,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 520 vs 509-568
+reference_img = '../data/reference/A/conditionA_0520.pgm';
+for i=509:568,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 580 vs 569-628
+reference_img = '../data/reference/A/conditionA_0580.pgm';
+for i=569:628,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 640 vs 629-688
+reference_img = '../data/reference/A/conditionA_0640.pgm';
+for i=629:688,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 700 vs 689-783
+reference_img = '../data/reference/A/conditionA_0700.pgm';
+for i=689:783,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	match(reference_img, file_img2, i, '../result/conditionA_conditionH/A_H_');
+	
+end
+
+
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_001.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_002.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_003.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_004.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_005.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_006.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_007.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_008.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_009.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_010.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_011.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_012.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_013.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_014.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_015.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_016.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_017.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_018.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_019.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_020.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_021.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_022.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_023.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_024.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_025.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_026.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_027.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_028.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_029.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_030.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_031.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_032.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_033.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_034.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_035.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_036.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_037.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_038.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_039.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_040.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_041.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_042.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_043.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_044.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_045.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_046.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_047.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_048.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_049.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_050.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_051.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_052.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_053.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_054.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_055.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_056.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_057.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_058.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_059.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_060.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_061.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_062.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_063.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_064.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_065.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_066.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_067.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_068.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_069.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131429_sunny1/sunny1_070.pgm');
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_071.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_072.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_073.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_074.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_075.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_076.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_077.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_078.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_079.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_080.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_081.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_082.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_083.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_084.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_085.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_086.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_087.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_088.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_089.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_090.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_091.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_092.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_093.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_094.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_095.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_096.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_097.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_098.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_099.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_100.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_101.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_102.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_103.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_104.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_105.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_106.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_107.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_108.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_109.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_110.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_111.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_112.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_113.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_114.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_115.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_116.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_117.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_118.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_119.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_120.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_121.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_122.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_123.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_124.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_125.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_126.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_127.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_128.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_129.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131429_sunny1/sunny1_130.pgm');
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_131.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_132.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_133.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_134.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_135.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_136.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_137.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_138.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_139.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_140.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_141.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_142.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_143.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_144.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_145.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_146.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_147.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_148.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_149.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_150.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_151.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_152.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_153.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_154.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_155.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_156.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_157.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_158.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_159.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_160.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_161.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_162.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_163.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_164.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_165.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_166.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_167.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_168.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_169.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_170.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_171.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_172.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_173.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_174.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_175.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_176.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_177.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_178.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_179.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_180.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_181.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_182.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_183.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_184.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_185.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_186.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_187.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_188.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_189.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_190.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_191.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131429_sunny1/sunny1_192.pgm');
+
+
+
+
+
+### SUNNY1 vs SUNNY2 ###
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_001.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_002.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_003.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_004.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_005.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_006.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_007.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_008.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_009.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_010.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_011.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_012.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_013.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_014.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_015.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_016.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_017.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_018.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_019.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_020.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_021.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_022.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_023.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_024.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_025.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_026.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_027.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_028.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_029.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_030.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_031.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_032.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_033.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_034.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_035.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_036.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_037.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_038.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_039.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_040.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_041.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_042.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_043.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_044.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_045.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_046.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_047.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_048.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_049.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_050.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_051.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_052.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_053.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_054.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_055.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_056.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_057.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_058.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_059.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_060.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_061.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_062.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120523131940_sunny2/sunny2_063.pgm');
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_064.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_065.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_066.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_067.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_068.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_069.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_070.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_071.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_072.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_073.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_074.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_075.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_076.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_077.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_078.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_079.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_080.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_081.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_082.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_083.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_084.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_085.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_086.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_087.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_088.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_089.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_090.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_091.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_092.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_093.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_094.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_095.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_096.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_097.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_098.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_099.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_100.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_101.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_102.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_103.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_104.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_105.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_106.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_107.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_108.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_109.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_110.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_111.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_112.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_113.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_114.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_115.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_116.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_117.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_118.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120523131940_sunny2/sunny2_119.pgm');
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_120.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_121.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_122.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_123.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_124.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_125.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_126.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_127.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_128.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_129.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_130.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_131.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_132.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_133.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_134.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_135.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_136.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_137.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_138.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_139.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_140.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_141.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_142.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_143.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_144.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_145.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_146.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_147.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_148.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_149.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_150.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_151.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_152.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_153.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_154.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_155.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_156.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_157.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_158.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_159.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_160.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_161.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_162.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_163.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_164.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_165.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_166.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_167.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_168.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120523131940_sunny2/sunny2_169.pgm');
+
+
+
+
+
+### SUNNY1 vs CLOUDY ###
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_001.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_002.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_003.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_004.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_005.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_006.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_007.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_008.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_009.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_010.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_011.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_012.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_013.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_014.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_015.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_016.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_017.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_018.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_019.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_020.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_021.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_022.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_023.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_024.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_025.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_026.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_027.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_028.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_029.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_030.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_031.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_032.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_033.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_034.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_035.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_036.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_037.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_038.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_039.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_040.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_041.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_042.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_043.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_044.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_045.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_046.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_047.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_048.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_049.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_050.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_051.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_052.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_053.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_054.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_055.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_056.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_057.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_058.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_059.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_045.pgm', '../Left_20120527171544_cloudy/cloudy_060.pgm');
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_061.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_062.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_063.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_064.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_065.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_066.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_067.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_068.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_069.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_070.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_071.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_072.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_073.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_074.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_075.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_076.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_077.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_078.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_079.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_080.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_081.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_082.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_083.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_084.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_085.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_086.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_087.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_088.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_089.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_090.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_091.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_092.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_093.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_094.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_095.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_096.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_097.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_098.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_099.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_100.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_101.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_102.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_106.pgm', '../Left_20120527171544_cloudy/cloudy_103.pgm');
+
+
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_104.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_105.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_106.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_107.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_108.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_109.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_110.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_111.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_112.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_113.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_114.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_115.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_116.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_117.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_118.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_119.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_120.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_121.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_122.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_123.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_124.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_125.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_126.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_127.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_128.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_129.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_130.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_131.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_132.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_133.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_134.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_135.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_136.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_137.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_138.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_139.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_140.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_141.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_142.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_143.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_144.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_145.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_146.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_147.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_148.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_149.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_150.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_151.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_152.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_153.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_154.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_155.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_156.pgm');
+match('../Left_20120523131429_sunny1/reference/sunny1_167.pgm', '../Left_20120527171544_cloudy/cloudy_157.pgm');

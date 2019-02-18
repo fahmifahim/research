@@ -1,0 +1,813 @@
+% ### ConditionA vs ConditionA ###
+% keypoints
+%for i=1:739
+%	imgPath = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+%	sift(imgPath);
+%end
+
+
+% TESTING
+
+image1 = '../data/reference/A/conditionA_0039.pgm';
+
+% SIFT Lowe UBC
+[im1, des_lowe, loc1] = sift(image1);
+
+% SIFT VLFeat
+I = imread(image1);
+[feature_vl,des_vl] = vl_sift(im2single(I)) ;
+
+
+
+% SIFT EXTRACTION TIME
+% Condition A
+tInitial = tic;
+for i=1:739,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	tStart = tic;
+	[imIn, descIn, locIn] = sift(file_img2);	
+	tElapsed = toc(tStart);
+	tElapsed
+
+	% Write the extraction time into text file
+	SIFTtime = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/SIFTextractionTimeA_A.txt', 'a');
+	fprintf(SIFTtime, '%f\r\n', tElapsed);
+	fclose(SIFTtime);
+end
+tAverage = toc(tInitial)/739
+
+
+% Condition D
+tInitial = tic;
+for i=1:720,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	tStart = tic;
+	[imIn, descIn, locIn] = sift(file_img2);	
+	tElapsed = toc(tStart);
+	tElapsed
+
+	% Write the extraction time into text file
+	SIFTtime = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/SIFTextractionTimeA_D.txt', 'a');
+	fprintf(SIFTtime, '%f\r\n', tElapsed);
+	fclose(SIFTtime);
+end
+tAverage = toc(tInitial)/720
+
+
+% Condition H
+tInitial = tic;
+for i=1:783,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	tStart = tic;
+	[imIn, descIn, locIn] = sift(file_img2);	
+	tElapsed = toc(tStart);
+	tElapsed
+
+	% Write the extraction time into text file
+	SIFTtime = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/SIFTextractionTimeA_H.txt', 'a');
+	fprintf(SIFTtime, '%f\r\n', tElapsed);
+	fclose(SIFTtime);
+end
+tAverage = toc(tInitial)/783
+
+
+
+
+
+
+%Reference image 39 vs 1-62
+reference_img = '../data/reference/A/conditionA_0039.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=1:62,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end
+
+%Reference image 85 vs 63-120
+reference_img = '../data/reference/A/conditionA_0085.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=63:120,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 155 vs 121-190
+reference_img = '../data/reference/A/conditionA_0155.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=121:190,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 225 vs 191-243
+reference_img = '../data/reference/A/conditionA_0225.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=191:243,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+	
+end	
+
+%Reference image 261 vs 244-300
+reference_img = '../data/reference/A/conditionA_0261.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=244:300,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 340 vs 301-375
+reference_img = '../data/reference/A/conditionA_0340.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=301:375,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 410 vs 376-435
+reference_img = '../data/reference/A/conditionA_0410.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=376:435,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 460 vs 436-490
+reference_img = '../data/reference/A/conditionA_0460.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=436:490,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 520 vs 491-550
+reference_img = '../data/reference/A/conditionA_0520.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=491:550,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 580 vs 551-610
+reference_img = '../data/reference/A/conditionA_0580.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=551:610,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 640 vs 611-670
+reference_img = '../data/reference/A/conditionA_0640.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=611:670,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 700 vs 671-739
+reference_img = '../data/reference/A/conditionA_0700.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=671:739,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+
+
+
+
+
+% ### ConditionA vs ConditionD ###
+% keypoints D
+%for i=1:720
+%	imgPath = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+%	sift(imgPath);
+%end
+
+%Reference image 39 vs 1-62
+reference_img = '../data/reference/A/conditionA_0039.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=1:62,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 85 vs 63-120
+reference_img = '../data/reference/A/conditionA_0085.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=63:120,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 155 vs 121-190
+reference_img = '../data/reference/A/conditionA_0155.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=121:190,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 225 vs 191-243
+reference_img = '../data/reference/A/conditionA_0225.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=191:243,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+		
+end	
+
+%Reference image 261 vs 244-300
+reference_img = '../data/reference/A/conditionA_0261.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=244:300,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 340 vs 301-375
+reference_img = '../data/reference/A/conditionA_0340.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=301:375,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 410 vs 376-435
+reference_img = '../data/reference/A/conditionA_0410.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=376:435,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 460 vs 436-490
+reference_img = '../data/reference/A/conditionA_0460.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=436:490,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 520 vs 491-550
+reference_img = '../data/reference/A/conditionA_0520.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=491:550,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 580 vs 551-610
+reference_img = '../data/reference/A/conditionA_0580.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=551:610,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 640 vs 611-670
+reference_img = '../data/reference/A/conditionA_0640.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=611:670,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 700 vs 671-720
+reference_img = '../data/reference/A/conditionA_0700.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=671:720,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+
+
+
+
+
+
+
+% ### ConditionA vs ConditionH ###
+% keypoints H
+%for i=1:783
+%	imgPath = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+%	sift(imgPath);
+%end
+
+
+%Reference image 39 vs 1-80
+reference_img = '../data/reference/A/conditionA_0039.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=1:80,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+
+end	
+
+%Reference image 85 vs 81-138
+reference_img = '../data/reference/A/conditionA_0085.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=81:138,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 155 vs 139-208
+reference_img = '../data/reference/A/conditionA_0155.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=139:208,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 225 vs 209-261
+reference_img = '../data/reference/A/conditionA_0225.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=209:261,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 261 vs 262-318
+reference_img = '../data/reference/A/conditionA_0261.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=262:318,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 340 vs 319-393
+reference_img = '../data/reference/A/conditionA_0340.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=319:393,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 410 vs 394-453
+reference_img = '../data/reference/A/conditionA_0410.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=394:453,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 460 vs 454-508
+reference_img = '../data/reference/A/conditionA_0460.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=454:508,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 520 vs 509-568
+reference_img = '../data/reference/A/conditionA_0520.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=509:568,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 580 vs 569-628
+reference_img = '../data/reference/A/conditionA_0580.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=569:628,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 640 vs 629-688
+reference_img = '../data/reference/A/conditionA_0640.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=629:688,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end	
+
+%Reference image 700 vs 689-783
+reference_img = '../data/reference/A/conditionA_0700.pgm';
+[imRef, descRef, locRef] = sift(reference_img);
+for i=689:783,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.pgm', i);
+	[imIn, descIn, locIn] = sift(file_img2);	
+
+	% UBC matching
+	[matches, scores] = vl_ubcmatch(descRef', descIn');
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(descRef, 1));
+	matchPercentage = size(scores, 2)/size(descRef, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/SIFT/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(descIn, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+	
+end
