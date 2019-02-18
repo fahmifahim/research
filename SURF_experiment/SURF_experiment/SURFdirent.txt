@@ -1,0 +1,231 @@
+int main(void)
+{
+    //const char* object_filename = argc == 3 ? argv[1] : "box.png";
+    //const char* scene_filename = argc == 3 ? argv[2] : "box_in_scene.png";
+
+
+	const char* object_filename = "C:\\atad\\Research\\experiment\\SURF\\data\\reference\\reference_045.pgm";
+	IplImage* object = cvLoadImage( object_filename, CV_LOAD_IMAGE_GRAYSCALE );
+
+	/*CvMemStorage* storage = cvCreateMemStorage(0);
+
+	cvNamedWindow("Object", 1);
+	cvNamedWindow("Object Correspond", 1);*/
+
+	static CvScalar colors[] = 
+	{
+	{{0,0,255}},
+	{{0,128,255}},
+	{{0,255,255}},
+	{{0,255,0}},
+	{{255,128,0}},
+	{{255,255,0}},
+	{{255,0,0}},
+	{{255,0,255}},
+	{{255,255,255}}
+	};
+
+
+
+
+	char DIRPATH[] = "C:\\atad\\Research\\experiment\\SURF\\data\\Sunny1\\";
+	DIR *dir;
+	struct dirent *entry;
+
+	dir = opendir(DIRPATH);
+
+		//checking the folder content
+		while ((entry = readdir(dir)) != NULL){
+			DIR *test;
+			char filePath[260];
+			sprintf(filePath, "%s%s", DIRPATH, entry->d_name);
+			errno = 0;
+			test = opendir(filePath);
+
+			if (test == NULL && errno!=0){
+				printf("%s\n", entry->d_name);
+				//Read file under the folder
+
+				
+				IplImage* image = cvLoadImage( filePath, CV_LOAD_IMAGE_GRAYSCALE );
+				if( !object || !image )
+				{
+					fprintf( stderr, "Can not load %s and/or %s\n"
+						"Usage: find_obj [<object_filename> <scene_filename>]\n",
+						object_filename, filePath );
+					exit(-1);
+				}
+
+				CvMemStorage* storage = cvCreateMemStorage(0);
+
+				cvNamedWindow("Object", 1);
+				cvNamedWindow("Object Correspond", 1);
+
+				IplImage* object_color = cvCreateImage(cvGetSize(object), 8, 3);
+				cvCvtColor( object, object_color, CV_GRAY2BGR );
+			    
+				CvSeq *objectKeypoints = 0, *objectDescriptors = 0;
+				CvSeq *imageKeypoints = 0, *imageDescriptors = 0;
+				int i;
+				CvSURFParams params = cvSURFParams(500, 1);
+
+				double tt = (double)cvGetTickCount();
+				cvExtractSURF( object, 0, &objectKeypoints, &objectDescriptors, storage, params );
+				printf("Object Descriptors: %d\n", objectDescriptors->total);
+				cvExtractSURF( image, 0, &imageKeypoints, &imageDescriptors, storage, params );
+				printf("Image Descriptors: %d\n", imageDescriptors->total);
+				tt = (double)cvGetTickCount() - tt;
+				printf( "Extraction time = %gms\n", tt/(cvGetTickFrequency()*1000.));
+				CvPoint src_corners[4] = {{0,0}, {object->width,0}, {object->width, object->height}, {0, object->height}};
+				CvPoint dst_corners[4];
+				IplImage* correspond = cvCreateImage( cvSize(image->width, object->height+image->height), 8, 1 );
+				cvSetImageROI( correspond, cvRect( 0, 0, object->width, object->height ) );
+				cvCopy( object, correspond );
+				cvSetImageROI( correspond, cvRect( 0, object->height, correspond->width, correspond->height ) );
+				cvCopy( image, correspond );
+				cvResetImageROI( correspond );
+
+				if( locatePlanarObject( objectKeypoints, objectDescriptors, imageKeypoints,
+					imageDescriptors, src_corners, dst_corners ))
+				{
+					for( i = 0; i < 4; i++ )
+					{
+						CvPoint r1 = dst_corners[i%4];
+						CvPoint r2 = dst_corners[(i+1)%4];
+						cvLine( correspond, cvPoint(r1.x, r1.y+object->height ),
+							cvPoint(r2.x, r2.y+object->height ), colors[8] );
+					}
+				}
+				vector<int> ptpairs;
+				findPairs( objectKeypoints, objectDescriptors, imageKeypoints, imageDescriptors, ptpairs );
+				for( i = 0; i < (int)ptpairs.size(); i += 2 )
+				{
+					CvSURFPoint* r1 = (CvSURFPoint*)cvGetSeqElem( objectKeypoints, ptpairs[i] );
+					CvSURFPoint* r2 = (CvSURFPoint*)cvGetSeqElem( imageKeypoints, ptpairs[i+1] );
+					cvLine( correspond, cvPointFrom32f(r1->pt),
+						cvPoint(cvRound(r2->pt.x), cvRound(r2->pt.y+object->height)), colors[8] );
+				}
+
+				cvShowImage( "Object Correspond", correspond );
+				for( i = 0; i < objectKeypoints->total; i++ )
+				{
+					CvSURFPoint* r = (CvSURFPoint*)cvGetSeqElem( objectKeypoints, i );
+					CvPoint center;
+					int radius;
+					center.x = cvRound(r->pt.x);
+					center.y = cvRound(r->pt.y);
+					radius = cvRound(r->size*1.2/9.*2);
+					cvCircle( object_color, center, radius, colors[0], 1, 8, 0 );
+				}
+				cvShowImage( "Object", object_color );
+
+				cvWaitKey(3000);
+
+				cvDestroyWindow("Object");
+				cvDestroyWindow("Object SURF");
+				cvDestroyWindow("Object Correspond");
+
+
+
+			//Read files under the folder. Finished
+			}else{
+				closedir(test);
+			}
+		}
+		
+	return 0;
+
+
+
+    /*CvMemStorage* storage = cvCreateMemStorage(0);
+
+    cvNamedWindow("Object", 1);
+    cvNamedWindow("Object Correspond", 1);
+
+    static CvScalar colors[] = 
+    {
+        {{0,0,255}},
+        {{0,128,255}},
+        {{0,255,255}},
+        {{0,255,0}},
+        {{255,128,0}},
+        {{255,255,0}},
+        {{255,0,0}},
+        {{255,0,255}},
+        {{255,255,255}}
+    };
+
+    IplImage* object = cvLoadImage( object_filename, CV_LOAD_IMAGE_GRAYSCALE );
+    IplImage* image = cvLoadImage( scene_filename, CV_LOAD_IMAGE_GRAYSCALE );
+    if( !object || !image )
+    {
+        fprintf( stderr, "Can not load %s and/or %s\n"
+            "Usage: find_obj [<object_filename> <scene_filename>]\n",
+            object_filename, scene_filename );
+        exit(-1);
+    }
+    IplImage* object_color = cvCreateImage(cvGetSize(object), 8, 3);
+    cvCvtColor( object, object_color, CV_GRAY2BGR );
+    
+    CvSeq *objectKeypoints = 0, *objectDescriptors = 0;
+    CvSeq *imageKeypoints = 0, *imageDescriptors = 0;
+    int i;
+    CvSURFParams params = cvSURFParams(500, 1);
+
+    double tt = (double)cvGetTickCount();
+    cvExtractSURF( object, 0, &objectKeypoints, &objectDescriptors, storage, params );
+    printf("Object Descriptors: %d\n", objectDescriptors->total);
+    cvExtractSURF( image, 0, &imageKeypoints, &imageDescriptors, storage, params );
+    printf("Image Descriptors: %d\n", imageDescriptors->total);
+    tt = (double)cvGetTickCount() - tt;
+    printf( "Extraction time = %gms\n", tt/(cvGetTickFrequency()*1000.));
+    CvPoint src_corners[4] = {{0,0}, {object->width,0}, {object->width, object->height}, {0, object->height}};
+    CvPoint dst_corners[4];
+    IplImage* correspond = cvCreateImage( cvSize(image->width, object->height+image->height), 8, 1 );
+    cvSetImageROI( correspond, cvRect( 0, 0, object->width, object->height ) );
+    cvCopy( object, correspond );
+    cvSetImageROI( correspond, cvRect( 0, object->height, correspond->width, correspond->height ) );
+    cvCopy( image, correspond );
+    cvResetImageROI( correspond );
+    if( locatePlanarObject( objectKeypoints, objectDescriptors, imageKeypoints,
+        imageDescriptors, src_corners, dst_corners ))
+    {
+        for( i = 0; i < 4; i++ )
+        {
+            CvPoint r1 = dst_corners[i%4];
+            CvPoint r2 = dst_corners[(i+1)%4];
+            cvLine( correspond, cvPoint(r1.x, r1.y+object->height ),
+                cvPoint(r2.x, r2.y+object->height ), colors[8] );
+        }
+    }
+    vector<int> ptpairs;
+    findPairs( objectKeypoints, objectDescriptors, imageKeypoints, imageDescriptors, ptpairs );
+    for( i = 0; i < (int)ptpairs.size(); i += 2 )
+    {
+        CvSURFPoint* r1 = (CvSURFPoint*)cvGetSeqElem( objectKeypoints, ptpairs[i] );
+        CvSURFPoint* r2 = (CvSURFPoint*)cvGetSeqElem( imageKeypoints, ptpairs[i+1] );
+        cvLine( correspond, cvPointFrom32f(r1->pt),
+            cvPoint(cvRound(r2->pt.x), cvRound(r2->pt.y+object->height)), colors[8] );
+    }
+
+    cvShowImage( "Object Correspond", correspond );
+    for( i = 0; i < objectKeypoints->total; i++ )
+    {
+        CvSURFPoint* r = (CvSURFPoint*)cvGetSeqElem( objectKeypoints, i );
+        CvPoint center;
+        int radius;
+        center.x = cvRound(r->pt.x);
+        center.y = cvRound(r->pt.y);
+        radius = cvRound(r->size*1.2/9.*2);
+        cvCircle( object_color, center, radius, colors[0], 1, 8, 0 );
+    }
+    cvShowImage( "Object", object_color );
+
+    cvWaitKey(0);
+
+    cvDestroyWindow("Object");
+    cvDestroyWindow("Object SURF");
+    cvDestroyWindow("Object Correspond");
+
+    return 0;*/
+}
