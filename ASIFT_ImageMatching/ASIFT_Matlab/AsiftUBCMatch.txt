@@ -1,0 +1,697 @@
+% ####################			####################
+% ####################	Condition A	####################
+% ####################			####################
+% Matching of ASIFT descriptor by Lowe's method (vl_ubcmatch)
+% [1] D. G. Lowe, Distinctive image features from scale-invariant 
+%
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0039.txt');
+	for i=1:62,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0085.txt');
+	for i=63:120,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0155.txt');
+	for i=121:190,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0225.txt');
+	for i=191:243,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0261.txt');
+	for i=244:300,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0340.txt');
+	for i=301:375,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0410.txt');
+	for i=376:435,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0460.txt');
+	for i=436:490,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0520.txt');
+	for i=491:550,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0580.txt');
+	for i=551:610,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0640.txt');
+	for i=611:670,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0700.txt');
+	for i=671:739,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ####################			####################
+% ####################	Condition D	####################
+% ####################			####################
+% Matching of ASIFT descriptor by Lowe's method (vl_ubcmatch)
+% [1] D. G. Lowe, Distinctive image features from scale-invariant 
+%
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0039.txt');
+	for i=1:62,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0085.txt');
+	for i=63:120,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0155.txt');
+	for i=121:190,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0225.txt');
+	for i=191:243,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0261.txt');
+	for i=244:300,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0340.txt');
+	for i=301:375,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0410.txt');
+	for i=376:435,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0460.txt');
+	for i=436:490,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0520.txt');
+	for i=491:550,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0580.txt');
+	for i=551:610,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0640.txt');
+	for i=611:670,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0700.txt');
+	for i=671:720,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/asift_D_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionD/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+
+
+
+
+
+
+
+
+
+
+% ####################			####################
+% ####################	Condition H	####################
+% ####################			####################
+% Matching of ASIFT descriptor by Lowe's method (vl_ubcmatch)
+% [1] D. G. Lowe, Distinctive image features from scale-invariant 
+%
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0039.txt');
+	for i=1:80,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0085.txt');
+	for i=81:138,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0155.txt');
+	for i=139:208,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0225.txt');
+	for i=209:261,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0261.txt');
+	for i=262:318,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0340.txt');
+	for i=319:393,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0410.txt');
+	for i=394:453,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0460.txt');
+	for i=454:508,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0520.txt');
+	for i=509:568,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0580.txt');
+	for i=569:628,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0640.txt');
+	for i=629:688,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/data/reference/A/asift_A_0700.txt');
+	for i=689:783,
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/asift_H_%04d.txt', i);
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionH/percentage/matchingPercentage.txt', 'a');
+	fprintf(matchingPercentage, '%d, %f\r\n', size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+
+
+
+

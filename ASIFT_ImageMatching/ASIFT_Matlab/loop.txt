@@ -1,0 +1,44 @@
+asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0039.txt');
+fprintf('test \n');
+
+for i=1:739, 
+	fprintf('test \n');
+	
+	asift_descriptor = load(adesc);
+	%size(asift_descriptor)
+	%size(asift_refDescriptor)
+	%matching by Lowe's method (SIFT). matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(asift_refDescriptor', asift_descriptor');
+	fprintf('Matching score %d: %d/%d * 100 = ', i, size(scores, 2), size(asift_refDescriptor, 1));
+	matchPercentage = size(scores, 2)/size(asift_refDescriptor, 1) * 100;
+	matchPercentage
+	matchingPercentage = fopen('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/percentage/matchingPercentage2.txt', 'a');
+	fprintf(matchingPercentage, '%f\r\n', matchPercentage);
+	fclose(matchingPercentage);
+
+	if (i == 63) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0085.txt');
+	else if (i == 121) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0155.txt');
+	else if (i == 191) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0225.txt');
+	else if (i == 244) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0261.txt');
+	else if (i == 301) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0340.txt');
+	else if (i == 376)
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0410.txt');
+	else if (i == 436)
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0460.txt');
+	else if (i == 491) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0520.txt');
+	else if (i == 551) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0580.txt');
+	else if (i == 611) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0640.txt');
+	else if (i == 671) 
+		asift_refDescriptor = load('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0700.txt');
+
+	adesc = sprintf('C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_%04d.txt', i);
+end
+fprintf('test \n');

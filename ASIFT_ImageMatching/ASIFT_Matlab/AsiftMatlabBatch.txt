@@ -1,0 +1,621 @@
+% ### ConditionA vs ConditionA ###
+
+%VLFeat library setup
+run('C:/vlfeat/vlfeat-0.9.16/toolbox/vl_setup');
+
+
+%testing
+%Reference image 39
+resultPath = 'C:/atad/research/experiment/ASIFT/result/conditionA_conditionA';
+addpath(resultPath);
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionA = '../result/conditionA_conditionA/ASIFT_conditionA.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+condition = 'A';
+	for i=39:39,
+	inputImage = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionA/asift_A_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionA/_asiftKeys_A_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionA, descriptor, keys, condition, i, 0);
+end
+
+rmpath(resultPath);
+
+
+
+
+
+
+%
+% ASIFT descriptor condition A
+% 1 - 739 input images
+
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionA = '../result/conditionA_conditionA/ASIFT_conditionA.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+
+for i=1:739,
+	inputImage = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionA/asift_A_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionA/_asiftKeys_A_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionA, descriptor, keys, 0);
+end
+
+
+
+
+
+%
+% ASIFT descriptor condition D
+% 1 - 720 input images
+
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionD = '../result/conditionA_conditionD/ASIFT_conditionD.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+
+for i=1:720,
+	inputImage = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionD/asift_D_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionD/_asiftKeys_D_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionD, descriptor, keys, 0);
+end
+
+
+
+
+
+%
+% ASIFT descriptor condition H
+% 1 - 783 input images
+
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionH = '../result/conditionA_conditionH/ASIFT_conditionH.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+
+for i=1:783,
+	inputImage = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionH/asift_H_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionH/_asiftKeys_H_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionH, descriptor, keys, 0);
+end
+
+
+
+
+
+
+
+
+% #####################
+% #####################
+% 
+%    ASIFT TILT = 7
+%
+% #####################
+% #####################
+
+
+%
+% ASIFT descriptor condition A
+% 1 - 739 input images
+
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionA = '../result/conditionA_conditionA/tilt7/ASIFT_conditionA.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+
+for i=1:739,
+	inputImage = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionA/tilt7/asift_A_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionA/tilt7/_asiftKeys_A_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionA, descriptor, keys, 0);
+end
+
+
+
+
+
+%
+% ASIFT descriptor condition D
+% 1 - 720 input images
+
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionD = '../result/conditionA_conditionD/tilt7/ASIFT_conditionD.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+
+for i=1:720,
+	inputImage = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionD/tilt7/asift_D_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionD/tilt7/_asiftKeys_D_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionD, descriptor, keys, 0);
+end
+
+
+
+
+
+%
+% ASIFT descriptor condition H
+% 1 - 783 input images
+
+referenceImage = '../data/reference/A/conditionA_0039.png';
+ASIFT_conditionH = '../result/conditionA_conditionH/tilt7/ASIFT_conditionH.txt';
+imgOutVert = 'imgOutVert';
+imgOutHori = 'imgOutHori';
+
+for i=1:783,
+	inputImage = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	descriptor = sprintf('../result/conditionA_conditionH/tilt7/asift_H_%04d.txt', i);
+	keys = sprintf('../result/conditionA_conditionH/tilt7/_asiftKeys_H_%04d.txt', i);
+	demo_ASIFT(inputImage, referenceImage, imgOutVert, imgOutHori, ASIFT_conditionH, descriptor, keys, 0);
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%Reference image 39 vs 1-62
+reference_img = '../data/reference/A/conditionA_0039.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+	for i=1:62,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+
+%Reference image 85 vs 63-120
+reference_img = '../data/reference/A/conditionA_0085.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=63:120,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 155 vs 121-190
+reference_img = '../data/reference/A/conditionA_0155.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=121:190,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 225 vs 191-243
+reference_img = '../data/reference/A/conditionA_0225.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=191:243,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 261 vs 244-300
+reference_img = '../data/reference/A/conditionA_0261.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=244:300,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 340 vs 301-375
+reference_img = '../data/reference/A/conditionA_0340.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=301:375,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 410 vs 376-435
+reference_img = '../data/reference/A/conditionA_0410.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=376:435,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 460 vs 436-490
+reference_img = '../data/reference/A/conditionA_0460.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=436:490,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 520 vs 491-550
+reference_img = '../data/reference/A/conditionA_0520.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=491:550,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 580 vs 551-610
+reference_img = '../data/reference/A/conditionA_0580.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=551:610,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 640 vs 611-670
+reference_img = '../data/reference/A/conditionA_0640.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=611:670,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+%Reference image 700 vs 671-739
+reference_img = '../data/reference/A/conditionA_0700.png';
+ASIFT_A_A = '../result/conditionA_conditionA/ASIFT_A_A.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=671:739,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionA/imgOutHori_A_A_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_A, keys1, keys2, 0);
+end
+
+
+
+
+
+
+% ### ConditionA vs ConditionD ###
+
+%Reference image 39 vs 1-62
+reference_img = '../data/reference/A/conditionA_0039.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=1:62,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+
+%Reference image 85 vs 63-120
+reference_img = '../data/reference/A/conditionA_0085.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=63:120,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 155 vs 121-190
+reference_img = '../data/reference/A/conditionA_0155.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=121:190,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 225 vs 191-243
+reference_img = '../data/reference/A/conditionA_0225.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=191:243,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 261 vs 244-300
+reference_img = '../data/reference/A/conditionA_0261.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=244:300,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 340 vs 301-375
+reference_img = '../data/reference/A/conditionA_0340.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=301:375,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 410 vs 376-435
+reference_img = '../data/reference/A/conditionA_0410.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=376:435,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 460 vs 436-490
+reference_img = '../data/reference/A/conditionA_0460.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=436:490,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 520 vs 491-550
+reference_img = '../data/reference/A/conditionA_0520.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=491:550,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 580 vs 551-610
+reference_img = '../data/reference/A/conditionA_0580.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=551:610,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 640 vs 611-670
+reference_img = '../data/reference/A/conditionA_0640.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=611:670,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+%Reference image 700 vs 671-720
+reference_img = '../data/reference/A/conditionA_0700.png';
+ASIFT_A_D = '../result/conditionA_conditionD/ASIFT_A_D.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=671:720,
+	file_img2 = sprintf('../data/conditionD/conditionD_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionD/imgOutHori_A_D_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_D, keys1, keys2, 0);
+end
+
+
+
+
+
+% ### ConditionA vs ConditionH ###
+
+%Reference image 39 vs 1-80
+reference_img = '../data/reference/A/conditionA_0039.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=1:80,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+
+%Reference image 85 vs 81-138
+reference_img = '../data/reference/A/conditionA_0085.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=81:138,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 155 vs 139-208
+reference_img = '../data/reference/A/conditionA_0155.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=139:208,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 225 vs 209-261
+reference_img = '../data/reference/A/conditionA_0225.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=209:261,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 261 vs 262-318
+reference_img = '../data/reference/A/conditionA_0261.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=262:318,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 340 vs 319-393
+reference_img = '../data/reference/A/conditionA_0340.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=319:393,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 410 vs 394-453
+reference_img = '../data/reference/A/conditionA_0410.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=394:453,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 460 vs 454-508
+reference_img = '../data/reference/A/conditionA_0460.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=454:508,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 520 vs 509-568
+reference_img = '../data/reference/A/conditionA_0520.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=509:568,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 580 vs 569-628
+reference_img = '../data/reference/A/conditionA_0580.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=569:628,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 640 vs 629-688
+reference_img = '../data/reference/A/conditionA_0640.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=629:688,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end
+
+%Reference image 700 vs 689-783
+reference_img = '../data/reference/A/conditionA_0700.png';
+ASIFT_A_H = '../result/conditionA_conditionH/ASIFT_A_H.txt';
+imgOutVert = 'imgOutVert';
+keys1 = 'keys1';
+keys2 = 'keys2';
+for i=689:783,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutHori = sprintf('../result/conditionA_conditionH/imgOutHori_A_H_%04d.png', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, ASIFT_A_H, keys1, keys2, 0);
+end

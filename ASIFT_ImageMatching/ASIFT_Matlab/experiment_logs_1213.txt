@@ -1,0 +1,426 @@
+## tilt 7
+reference_img = '../data/reference/A/conditionA_0039.png';
+for i=19:19,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+2354 ASIFT keypoints are detected.  
+2067 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 2 seconds. 
+Matching the keypoints... 
+The two images match! 13 matchings are identified. log(nfa)=-4.39395. 
+Keypoints matching accomplished in 0 seconds. 
+
+
+EDU>> reference_img = '../data/reference/A/conditionA_0039.png';
+for i=19:19,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+2354 ASIFT keypoints are detected.  
+2068 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 37 seconds. 
+Matching the keypoints... 
+The two images match! 921 matchings are identified. log(nfa)=-7000.53. 
+Keypoints matching accomplished in 112 seconds. 
+
+
+EDU>> reference_img = '../data/reference/A/conditionA_0039.png';
+for i=19:19,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+1068 ASIFT keypoints are detected.  
+1011 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 6 seconds. 
+Matching the keypoints... 
+The two images do not match. Not enough matches to do epipolar filtering. 
+Keypoints matching accomplished in 2 seconds. 
+
+
+###tilt 1.5
+Computing keypoints on the two images... 
+371 ASIFT keypoints are detected.  
+371 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 1 seconds. 
+Matching the keypoints... 
+The two images match! 178 matchings are identified. log(nfa)=-1298.54. 
+Keypoints matching accomplished in 3 seconds. 
+
+
+###tilt 1
+Computing keypoints on the two images... 
+371 ASIFT keypoints are detected.  
+371 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 1 seconds. 
+Matching the keypoints... 
+The two images match! 177 matchings are identified. log(nfa)=-1322.33. 
+Keypoints matching accomplished in 3 seconds. 
+
+
+###tilt 2
+EDU>> reference_img = '../data/reference/A/conditionA_0039.png';
+for i=39:39,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+1068 ASIFT keypoints are detected.  
+1068 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 5 seconds. 
+Matching the keypoints... 
+The two images match! 436 matchings are identified. log(nfa)=-3255.51. 
+Keypoints matching accomplished in 7 seconds. 
+
+
+
+###tilt 2.4
+EDU>> reference_img = '../data/reference/A/conditionA_0039.png';
+for i=39:39,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+1068 ASIFT keypoints are detected.  
+1068 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 6 seconds. 
+Matching the keypoints... 
+The two images match! 433 matchings are identified. log(nfa)=-3164.83. 
+Keypoints matching accomplished in 6 seconds. 
+
+
+
+####tilt 2.7
+EDU>> reference_img = '../data/reference/A/conditionA_0039.png';
+for i=39:39,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+1068 ASIFT keypoints are detected.  
+1068 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 5 seconds. 
+Matching the keypoints... 
+The two images match! 436 matchings are identified. log(nfa)=-3391.71. 
+Keypoints matching accomplished in 7 seconds. 
+
+
+
+###tilt 3
+EDU>> reference_img = '../data/reference/A/conditionA_0039.png';
+for i=39:39,
+	file_img2 = sprintf('../data/conditionA/conditionA_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_A_A_%04d.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_A_A_%04d.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_A_A_%04d.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A_A_%04d.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_A2_A2_%04d.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+Computing keypoints on the two images... 
+1626 ASIFT keypoints are detected.  
+1626 ASIFT keypoints are detected.  
+Keypoints computation accomplished in 11 seconds. 
+Matching the keypoints... 
+The two images match! 592 matchings are identified. log(nfa)=-4697.81. 
+Keypoints matching accomplished in 11 seconds. 
+
+
+
+ASIFT
+demo_ASIFT('c:/images/adam1.png', 'c:/images/adam2.png', 'c:/images/comparison/ASIFT_horizontal.png', 'c:/images/comparison/ASIFT_vertical.png', 'c:/images/comparison/matching.txt', 'c:/images/comparison/keys1.txt', 'c:/images/comparison/keys2.txt', 0);
+
+
+SIFT
+for i=1:1,
+	match('c:/images/adam1.png', 'c:/images/adam2.png', i, 'c:/images/comparison/SIFT_');
+end	
+
+
+SURF
+
+
+
+
+
+%ASIFT
+%matchings: 227  128-dimensions
+reference_img = '../data/conditionH/conditionH_0612.png';
+for i=612:612,
+	file_img2 = sprintf('../data/conditionH/conditionH_%04d.png', i);
+	imgOutVert = sprintf('C:/Users/terapad/Desktop/hapus/imgOutVert_H_H_%04d_redundant.png', i);
+	imgOutHori = sprintf('C:/Users/terapad/Desktop/hapus/imgOutHori_H_H_%04d_redundant.png', i);
+	matchings = sprintf('C:/Users/terapad/Desktop/hapus/matchings_H_H_%04d_redundant.txt', i);
+	keys1 = sprintf('C:/Users/terapad/Desktop/hapus/keys_H_H_%04d_redundant.txt', i);
+	keys2 = sprintf('C:/Users/terapad/Desktop/hapus/keys_H2_H2_%04d_redundant.txt', i);
+	demo_ASIFT(reference_img, file_img2, imgOutVert, imgOutHori, matchings, keys1, keys2, 0);
+end
+
+
+
+
+%SURF
+%descr_l 49 columns
+%descr_r 49 columns
+left_img  = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+right_img = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+ 
+%[spixels_l,descr_l,sign_l,info_l] = surfpoints(rgb2gray(left_img));
+[spixels_l,descr_l,sign_l,info_l] = surfpoints(left_img); 
+
+%display the image1 and plot the keypoints
+figure;
+imshow(left_img);
+hold on;
+plot(spixels_l(1,:),spixels_l(2,:),'r*'); hold on
+ 
+%[spixels_r,descr_r,sign_r,info_r] = surfpoints(rgb2gray(right_img));
+[spixels_r,descr_r,sign_r,info_r] = surfpoints(right_img);
+ 
+%display the image2 and plot the keypoints
+figure;
+imshow(right_img);
+hold on;
+plot(spixels_r(1,:),spixels_r(2,:),'r*'); hold on
+ 
+matches = surfmatch(descr_l,descr_r);
+
+surfnum = randi(size(matches,2),1,30);
+
+% Show a figure with lines joining the accepted matches.
+match_plot(left_img,right_img,spixels_l(:,matches(1,surfnum))',spixels_r(:,matches(2,surfnum))');
+
+figure;
+imshow(left_img);
+hold on;
+surfplot(spixels_l(:,matches(1,surfnum)),info_l(:,matches(1,surfnum)));
+ 
+figure;
+imshow(right_img);
+hold on;
+surfplot(spixels_r(:,matches(2,surfnum)),info_r(:,matches(2,surfnum)));
+
+
+
+
+
+
+%SURF surf match
+left_img  = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+right_img = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+ 
+%[spixels_l,descr_l,sign_l,info_l] = surfpoints(rgb2gray(left_img));
+[spixels_l,descr_l,sign_l,info_l] = surfpoints(left_img); 
+
+%display the image1 and plot the keypoints
+figure;
+imshow(left_img);
+hold on;
+plot(spixels_l(1,:),spixels_l(2,:),'r*'); hold on
+ 
+%[spixels_r,descr_r,sign_r,info_r] = surfpoints(rgb2gray(right_img));
+[spixels_r,descr_r,sign_r,info_r] = surfpoints(right_img);
+ 
+%display the image2 and plot the keypoints
+figure;
+imshow(right_img);
+hold on;
+plot(spixels_r(1,:),spixels_r(2,:),'r*'); hold on
+ 
+matches = surfmatch(descr_l,descr_r);
+
+surfnum = randi(size(matches,2),1,30);
+
+% Show a figure with lines joining the accepted matches.
+match_plot(left_img,right_img,spixels_l(:,matches(1,surfnum))',spixels_r(:,matches(2,surfnum))');
+
+figure;
+imshow(left_img);
+hold on;
+surfplot(spixels_l(:,matches(1,surfnum)),info_l(:,matches(1,surfnum)));
+ 
+figure;
+imshow(right_img);
+hold on;
+surfplot(spixels_r(:,matches(2,surfnum)),info_r(:,matches(2,surfnum)));
+
+
+OK
+
+
+
+
+%SURF ubc match
+left_img  = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+right_img = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+ 
+%[spixels_l,descr_l,sign_l,info_l] = surfpoints(rgb2gray(left_img));
+[spixels_l,descr_l,sign_l,info_l] = surfpoints(left_img); 
+
+%display the image1 and plot the keypoints
+figure;
+imshow(left_img);
+hold on;
+plot(spixels_l(1,:),spixels_l(2,:),'r*'); hold on
+ 
+%[spixels_r,descr_r,sign_r,info_r] = surfpoints(rgb2gray(right_img));
+[spixels_r,descr_r,sign_r,info_r] = surfpoints(right_img);
+ 
+%display the image2 and plot the keypoints
+figure;
+imshow(right_img);
+hold on;
+plot(spixels_r(1,:),spixels_r(2,:),'r*'); hold on
+ 
+%SIFT matching method UBCmatch
+[matches, scores] = vl_ubcmatch(descr_l,descr_r) ;
+
+%matches = surfmatch(descr_l,descr_r);
+
+surfnum = randi(size(matches,2),1,30);
+
+% Show a figure with lines joining the accepted matches.
+match_plot(left_img,right_img,spixels_l(:,matches(1,surfnum))',spixels_r(:,matches(2,surfnum))');
+
+figure;
+imshow(left_img);
+hold on;
+surfplot(spixels_l(:,matches(1,surfnum)),info_l(:,matches(1,surfnum)));
+ 
+figure;
+imshow(right_img);
+hold on;
+surfplot(spixels_r(:,matches(2,surfnum)),info_r(:,matches(2,surfnum)));
+
+
+OK
+
+
+
+%ASIFT UBC match
+demo_ASIFT('C:/images/imageL.jpg', 'C:/images/imageL.jpg', 'C:/Users/terapad/Desktop/hapus/vertical.jpg', 'C:/Users/terapad/Desktop/hapus/horizontal.jpg', 'C:/Users/terapad/Desktop/hapus/matchings_lab.txt', 'C:/Users/terapad/Desktop/hapus/key1_lab.txt', 'C:/Users/terapad/Desktop/hapus/key2_lab.txt', 0);
+
+
+[matches, scores] = vl_ubcmatch(asift_desc1, asift_desc2) ;
+surfnum = randi(size(matches,2),1,30);
+match_plot(left_img,right_img,spixels_l(:,matches(1,surfnum))',spixels_r(:,matches(2,surfnum))');
+figure;
+imshow(left_img);
+hold on;
+surfplot(spixels_l(:,matches(1,surfnum)),info_l(:,matches(1,surfnum)));
+ 
+figure;
+imshow(right_img);
+hold on;
+surfplot(spixels_r(:,matches(2,surfnum)),info_r(:,matches(2,surfnum)));
+
+
+
+
+
+[repeatability numCorresp] = repBenchmark.testFeatureExtractor(sift, dataset.getTransformation(2), 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm', 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+repBenchmark = benchmarks.RepeatabilityBenchmark();
+[repeatability numCorresp] = repBenchmark.testFeatureExtractor(asift_desc1_612, 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm', 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+
+
+
+
+
+
+
+SURF
+left_img_612  = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0612.pgm');
+right_img_620 = imread('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0620.pgm');
+[spixels_l,descr_l_612,sign_l,info_l] = surfpoints(left_img_612); 
+
+%display the image1 and plot the keypoints
+figure;
+imshow(left_img_612);
+hold on;
+plot(spixels_l(1,:),spixels_l(2,:),'r*'); hold on
+ 
+%[spixels_r,descr_r,sign_r,info_r] = surfpoints(rgb2gray(right_img));
+[spixels_r,descr_r_620,sign_r,info_r] = surfpoints(right_img_620);
+ 
+%display the image2 and plot the keypoints
+figure;
+imshow(right_img_620);
+hold on;
+plot(spixels_r(1,:),spixels_r(2,:),'r*'); hold on
+ 
+%SIFT matching method UBCmatch
+[matches612620, scores612620] = vl_ubcmatch(descr_l_612,descr_r_620) ;
+
+%matches = surfmatch(descr_l,descr_r);
+
+surfnum = randi(size(matches612620,2),1,30);
+
+% Show a figure with lines joining the accepted matches.
+match_plot(left_img_612,right_img_620,spixels_l(:,matches612620(1,surfnum))',spixels_r(:,matches612620(2,surfnum))');
+
+figure;
+imshow(left_img_612);
+hold on;
+surfplot(spixels_l(:,matches612620(1,surfnum)),info_l(:,matches612620(1,surfnum)));
+ 
+figure;
+imshow(right_img_620);
+hold on;
+surfplot(spixels_r(:,matches612620(2,surfnum)),info_r(:,matches612620(2,surfnum)));
+
+
+
+
+demo_ASIFT('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0620.pgm', 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0620.pgm', 'C:/Users/terapad/Desktop/hapus/vertical620.jpg', 'C:/Users/terapad/Desktop/hapus/horizontal620.jpg', 'C:/Users/terapad/Desktop/hapus/matchingsasift_620.txt', 'C:/Users/terapad/Desktop/hapus/key1_asift620.txt', 'C:/Users/terapad/Desktop/hapus/key2_asift620.txt', 0);
+[matches, scores] = vl_ubcmatch(asift_620, asift_620) ;
+
+[matches, scores] = vl_ubcmatch(asift_620, asift_620) ;
+
+
+demo_ASIFT('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0288.pgm', 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0288.pgm', 'C:/Users/terapad/Desktop/hapus/vertical288.jpg', 'C:/Users/terapad/Desktop/hapus/horizontal288.jpg', 'C:/Users/terapad/Desktop/hapus/matchingsasift_288.txt', 'C:/Users/terapad/Desktop/hapus/key1_asift288.txt', 'C:/Users/terapad/Desktop/hapus/key2_asift288.txt', 0);
+[matches_288288, scores_288288] = vl_ubcmatch(asift_288, asift_288) ;
+[matches_288620, scores_288620] = vl_ubcmatch(asift_288, asift_620) ;
+
+
+
+ASIFT descriptor
+demo_ASIFT('C:/atad/research/experiment/SURF/data/conditionH/conditionH_0288.pgm', 'C:/atad/research/experiment/SURF/data/conditionH/conditionH_0288.pgm', 'vertical', 'horizontal', 'matching', 'C:/Users/terapad/Desktop/hapus/asiftvec_288.txt', 'C:/Users/terapad/Desktop/hapus/asiftcoordinage_288.txt', 0);
+
+demo_ASIFT('C:/atad/research/experiment/ASIFT/data/conditionA/conditionA_0001.png', 'C:/atad/research/experiment/ASIFT/data/conditionA/conditionA_0001.png', 'vertical', 'horizontal', 'matching', 'C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0001.m', 'C:/atad/research/experiment/ASIFT/result/conditionA_conditionA/asift_A_0001.txt', 0);
+
+
+
+
