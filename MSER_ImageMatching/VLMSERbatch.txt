@@ -1,0 +1,717 @@
+% --------------------------------------------------------------------
+%                                                        Load a figure
+% --------------------------------------------------------------------
+%I = imread('c:/images/spots.jpg');
+%I = imread('c:/images/imageL.jpg');
+I = imread('c:/images/003126302.bmp');
+%I = imread('c:/images/007924962.bmp');
+%I = imread('c:/images/003126302.jpg');
+
+image(I) ; colormap gray ;
+axis equal ; axis off ; axis tight ;
+vl_demo_print('mser_basic_0') ;
+
+
+% --------------------------------------------------------------------
+%                                       Convert the to required format
+% --------------------------------------------------------------------
+
+I = uint8(rgb2gray(I));
+
+
+clf ; imagesc(I) ; colormap(gray(256)) ;
+axis equal ; axis off ; axis tight ;
+
+
+% --------------------------------------------------------------------
+%                                                             Run VL_MSER
+% --------------------------------------------------------------------
+
+[r, f] = vl_mser(I, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+
+%   R=VL_MSER(I) computes the Maximally Stable Extremal Regions (MSER)
+%   [1] of image I with stability threshold DELTA. I is any array of
+%   class UINT8. R is a vector of region seeds.
+
+%   [R,F]=VL_MSER(...) also returns ellipsoids F fitted to the regions.
+%   Each column of F describes an ellipsoid; F(1:D,i) is the center of
+%   the elliposid and F(D:end,i) are the independent elements of the
+%   co-variance matrix of the ellipsoid.
+
+
+% compute regions mask
+M = zeros(size(I)) ;
+for x=r'
+  s = vl_erfill(I,x) ;
+  M(s) = M(s) + 1;
+end
+
+% adjust convention
+f = vl_ertr(f) ;
+
+figure(1) ;
+hold on ;
+h1 = vl_plotframe(f) ; set(h1,'color','y','linewidth',3) ;
+h2 = vl_plotframe(f) ; set(h2,'color','k','linewidth',1) ;
+vl_demo_print('mser_basic_frames') ;
+
+figure(2) ; clf ; imagesc(I) ; hold on ;
+colormap(gray(256)) ;
+[c,h]=contour(M,(0:max(M(:)))+.5) ;
+set(h,'color','y','linewidth',3) ;
+axis equal ; axis off ;
+vl_demo_print('mser_basic_contours') ;
+
+
+
+
+
+% --------------------------------------------------------------------
+%                                                       Run VL_MSER again
+% --------------------------------------------------------------------
+
+[r,f] = vl_mser(I,'MinDiversity',0.7,'MaxVariation',0.2,...
+  'Delta',10,'BrightOnDark',1,'DarkOnBright',0) ;
+
+% adjust convention
+f = vl_ertr(f) ;
+
+% compute regions mask
+M = zeros(size(I)) ;
+for x=r'
+  s = vl_erfill(I,x) ;
+  M(s) = M(s) + 1;
+end
+
+figure(1) ;
+hold on ;
+h1 = vl_plotframe(f) ; set(h1,'color','g','linewidth',3) ;
+h2 = vl_plotframe(f) ; set(h2,'color','k','linewidth',1) ;
+vl_demo_print('mser_basic_frames_both') ;
+
+figure(2) ;
+[c,h]=contour(M,(0:max(M(:)))+.5) ;
+set(h,'color','g','linewidth',3) ;
+
+hold on ; axis equal ; axis off ;
+vl_demo_print('mser_basic_contours_both') ;
+
+
+
+
+
+
+
+
+
+
+
+I3 = imread('C:/atad/research/experiment/data/RealData/conditionA/conditionA_0001.jpg');
+I4 = imread('C:/atad/research/experiment/data/RealData/conditionA/conditionA_0039.jpg');
+
+
+image(I3) ; colormap gray ;
+axis equal ; axis off ; axis tight ;
+vl_demo_print('mser_basic_0') ;
+
+% --------------------------------------------------------------------
+%                                       Convert the to required format
+% --------------------------------------------------------------------
+
+I3 = uint8(rgb2gray(I3));
+I4 = uint8(rgb2gray(I4));
+
+clf ; imagesc(I3) ; colormap(gray(256)) ;
+axis equal ; axis off ; axis tight ;
+
+
+% --------------------------------------------------------------------
+%                                                             Run VL_MSER
+% --------------------------------------------------------------------
+
+[r3, f3] = vl_mser(I3, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+[r4, f4] = vl_mser(I4, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+
+% adjust convention
+f3 = vl_ertr(f3) ;
+f4 = vl_ertr(f4) ;
+
+[matches_34, scores_34] = vl_ubcmatch(f3, f4);
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionA	#########
+% #########					######### 
+
+
+%Reference image 39 vs 1-62
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0039.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=1:62,
+	input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+
+end
+
+%Reference image 85 vs 63-120
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0085.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=63:120,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 155 vs 121-190
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0155.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=121:190,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+end	
+
+%Reference image 225 vs 191-243
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0225.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=191:243,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+end	
+
+%Reference image 261 vs 244-300
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0261.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=244:300,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 340 vs 301-375
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0340.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=301:375,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 410 vs 376-435
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0410.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=376:435,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 460 vs 436-490
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0460.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=436:490,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 520 vs 491-550
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0520.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=491:550,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 580 vs 551-610
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0580.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=551:610,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 640 vs 611-670
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0640.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=611:670,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+%Reference image 700 vs 671-739
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0700.jpg';
+refImg = imread(reference_img); refImg = uint8(rgb2gray(refImg));
+[refRegion, refFeature] = vl_mser(refImg, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+refFeature = vl_ertr(refFeature);
+for i=671:739,
+input_image = sprintf('C:/atad/research/experiment/data/RealData/conditionA/conditionA_%04d.jpg', i);
+	input_image = imread(input_image); input_image = uint8(rgb2gray(input_image));
+	[inRegion, inFeature] = vl_mser(input_image, 'MinDiversity', 0.7, 'MaxVariation', 0.2, 'Delta', 10);
+	inFeature = vl_ertr(inFeature);
+
+	fprintf('Reference feature:');
+	size(refFeature)
+	fprintf('Input feature');
+	size(inFeature)
+
+	% match by Lowe's matching (vl_ubcmatch)
+	[matches, scores] = vl_ubcmatch(refFeature, inFeature);
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeature, 2));
+	matchPercentage = size(scores, 2)/size(refFeature, 2) * 100;
+	matchPercentage
+
+	matchingResult = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERmatchingPercentage_A_A.txt', 'a');
+	
+	%write #input-image feature points, #matching, matching percentage
+	fprintf(matchingResult, '%d, %d, %f\r\n', size(inFeature, 2), size(scores, 2), matchPercentage);
+	fclose(matchingResult);
+	
+end	
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionD	#########
+% #########					######### 
+
+%Reference image 39 vs 1-62
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0039.jpg';
+for i=1:62,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 85 vs 63-120
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0085.jpg';
+for i=63:120,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 155 vs 121-190
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0155.jpg';
+for i=121:190,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 225 vs 191-243
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0225.jpg';
+for i=191:243,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 261 vs 244-300
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0261.jpg';
+for i=244:300,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 340 vs 301-375
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0340.jpg';
+for i=301:375,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 410 vs 376-435
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0410.jpg';
+for i=376:435,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 460 vs 436-490
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0460.jpg';
+for i=436:490,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 520 vs 491-550
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0520.jpg';
+for i=491:550,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 580 vs 551-610
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0580.jpg';
+for i=551:610,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 640 vs 611-670
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0640.jpg';
+for i=611:670,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+%Reference image 700 vs 671-720
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0700.jpg';
+for i=671:720,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionD/A_D_');
+	
+end	
+
+
+
+
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionH	#########
+% #########					######### 
+
+%Reference image 39 vs 1-80
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0039.jpg';
+for i=1:80,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 85 vs 81-138
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0085.jpg';
+for i=81:138,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 155 vs 139-208
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0155.jpg';
+for i=139:208,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 225 vs 209-261
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0225.jpg';
+for i=209:261,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 261 vs 262-318
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0261.jpg';
+for i=262:318,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 340 vs 319-393
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0340.jpg';
+for i=319:393,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 410 vs 394-453
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0410.jpg';
+for i=394:453,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 460 vs 454-508
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0460.jpg';
+for i=454:508,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 520 vs 509-568
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0520.jpg';
+for i=509:568,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 580 vs 569-628
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0580.jpg';
+for i=569:628,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 640 vs 629-688
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0640.jpg';
+for i=629:688,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end	
+
+%Reference image 700 vs 689-783
+reference_img = 'C:/atad/research/experiment/data/RealData/conditionA/conditionA_0700.jpg';
+for i=689:783,
+	input_image = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.jpg', i);
+	match_test(reference_img, input_image, i, 'C:/atad/research/experiment/SURF/result/conditionA_conditionH/A_H_');
+	
+end

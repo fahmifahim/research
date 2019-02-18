@@ -1,0 +1,949 @@
+% Extract and display SURF descriptors at locations identified by MSER detector.
+% Read image.
+I = imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm');
+
+%Detect MSER features.
+regionsObj = detectMSERFeatures(I);
+
+%Extract and display SURF descriptors.
+[features, validPtsObj] = extractFeatures(I, regionsObj);
+imshow(I); hold on;
+plot(validPtsObj,'showOrientation',true);
+
+
+
+% TESTING
+
+%Reference image 39 vs 1-62
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=1:62,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
+
+
+% MATLAB EXTRACTION TIME
+% Condition A
+tInitial = tic;
+for i=1:739,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	tStart = tic;
+	inRegionsObj = detectMSERFeatures(input_img);
+	tElapsed = toc(tStart); 
+	tElapsed
+
+	MSERtime = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/MSERextractionTime.txt', 'a');
+	fprintf(MSERtime, '%f\r\n', tElapsed);
+	fclose(MSERtime);
+end
+tAverage = toc(tInitial)/739
+
+
+% COndition D
+tInitial = tic;
+for i=1:720,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	tStart = tic;
+	inRegionsObj = detectMSERFeatures(input_img);
+	tElapsed = toc(tStart); 
+	tElapsed
+
+	MSERtime = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/MSERextractionTime.txt', 'a');
+	fprintf(MSERtime, '%f\r\n', tElapsed);
+	fclose(MSERtime);
+end
+tAverage = toc(tInitial)/720
+
+
+% COndition H
+tInitial = tic;
+for i=1:783,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	tStart = tic;
+	inRegionsObj = detectMSERFeatures(input_img);
+	tElapsed = toc(tStart); 
+	tElapsed
+
+	MSERtime = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/MSERextractionTime.txt', 'a');
+	fprintf(MSERtime, '%f\r\n', tElapsed);
+	fclose(MSERtime);
+end
+tAverage = toc(tInitial)/783
+
+
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionA	#########
+% #########					######### 
+
+
+%Reference image 39 vs 1-62
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=1:62,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 85 vs 63-120
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0085.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=63:120,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 155 vs 121-190
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0155.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=121:190,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 225 vs 191-243
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0225.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=191:243,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 261 vs 244-300
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0261.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=244:300,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 340 vs 301-375
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0340.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=301:375,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 410 vs 376-435
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0410.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=376:435,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 460 vs 436-490
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0460.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=436:490,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 520 vs 491-550
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0520.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=491:550,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 580 vs 551-610
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0580.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=551:610,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 640 vs 611-670
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0640.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=611:670,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 700 vs 671-739
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0700.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=671:739,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionA/conditionA_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionA/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionD	#########
+% #########					######### 
+
+%Reference image 39 vs 1-62
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=1:62,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 85 vs 63-120
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0085.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=63:120,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 155 vs 121-190
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0155.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=121:190,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 225 vs 191-243
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0225.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=191:243,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 261 vs 244-300
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0261.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=244:300,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 340 vs 301-375
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0340.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=301:375,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 410 vs 376-435
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0410.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=376:435,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 460 vs 436-490
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0460.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=436:490,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 520 vs 491-550
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0520.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=491:550,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 580 vs 551-610
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0580.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=551:610,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 640 vs 611-670
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0640.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=611:670,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 700 vs 671-720
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0700.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=671:720,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionD/conditionD_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionD/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+
+
+
+
+
+
+
+
+% #########					#########				
+% #########	ConditionA vs ConditionH	#########
+% #########					######### 
+
+%Reference image 39 vs 1-80
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0039.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=1:80,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 85 vs 81-138
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0085.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=81:138,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 155 vs 139-208
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0155.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=139:208,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 225 vs 209-261
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0225.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=209:261,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 261 vs 262-318
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0261.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=262:318,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 340 vs 319-393
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0340.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=319:393,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 410 vs 394-453
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0410.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=394:453,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 460 vs 454-508
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0460.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=454:508,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 520 vs 509-568
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0520.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=509:568,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 580 vs 569-628
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0580.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=569:628,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 640 vs 629-688
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0640.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=629:688,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end	
+
+%Reference image 700 vs 689-783
+reference_img = im2single(imread('C:/atad/research/experiment/SURF/data/reference/A/conditionA_0700.pgm'));
+refRegionsObj = detectMSERFeatures(reference_img);
+[refFeatures, refValidPtsObj] = extractFeatures(reference_img, refRegionsObj);
+
+for i=689:783,
+	input_img = sprintf('C:/atad/research/experiment/SURF/data/conditionH/conditionH_%04d.pgm', i);
+	input_img = im2single(imread(input_img));
+	inRegionsObj = detectMSERFeatures(input_img);
+	[inFeatures, inValidPtsObj] = extractFeatures(input_img, inRegionsObj);
+
+	%matching by Lowe's method (SIFT). Matrix need to be transposed
+	[matches, scores] = vl_ubcmatch(refFeatures', inFeatures');
+	fprintf('Matching score for image %d: %d/%d * 100 = ', i, size(scores, 2), size(refFeatures, 1));
+	matchPercentage = size(scores, 2)/size(refFeatures, 1) * 100;
+	matchPercentage
+
+	matchingPercentage = fopen('C:/atad/research/experiment/MSER/result/conditionA_conditionH/matchingPercentage.txt', 'a');
+	%write #inputFeatures, #matching, matchingPercentage
+	fprintf(matchingPercentage, '%d, %d, %f\r\n', size(inFeatures, 1), size(scores, 2), matchPercentage);
+	fclose(matchingPercentage);
+end
